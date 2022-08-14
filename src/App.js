@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import Box from './components/Box';
+import Form from './components/Form';
 
 function App() {
+  const [boxColor, setBoxColor] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Box Color Generator</h1>
+      <p>Input a color into the form and the output will be a box of your chosen color!</p>
+
+      <Form boxColor={boxColor} setBoxColor={setBoxColor} />
+      <Box boxColor={boxColor} />
     </div>
   );
 }
